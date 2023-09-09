@@ -24,4 +24,4 @@ This project implements a web application with a login system using the Corbado 
 Clone this repository to your local machine by running:
 
 ```sh
-git clone <repository_url>
+git clone https://github.com/chigozz/flask-corbado
