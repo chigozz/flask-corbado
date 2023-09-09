@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <!-- Import Corbado SDK -->
+    <script src="https://{{ project_id }}.frontendapi.corbado.io/auth.js"></script>
+    <script src="https://{{ project_id }}.frontendapi.corbado.io/utility.js"></script>
+
+    <div id="content-container"></div>
+
+    <!-- Logout button -->
+    <button id="logoutButton">Logout</button>
+    <!-- Content container -->
+
+    <script>
+        // Create a new session
+        const session = new Corbado.Session('{{ project_id }}');
+
+        // Register a callback for session refresh
+        session.refresh(user => {
+            // Here, you can define what happens when the session is initialized
+            if (user) {
+                // If the user is logged in, display some content
+                document.getElementById('content-container').innerHTML = 'Welcome to the home page!';
+            } else {
+                // If the user is not logged in, redirect to login page
+                window.location.replace("/");
+            }
+        });
+
+        // Get logout button
+        const logoutButton = document.getElementById('logoutButton');
+
+        // Add event listener to logout button
+        logoutButton.addEventListener('click', function() {
+            session.logout()
+                .then(() => {
+                    window.location.replace("/");
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+        });
+    </script>
+</body>
+</html>
