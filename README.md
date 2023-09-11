@@ -50,3 +50,16 @@ Use the following command to run the project:
 ```sh
 python corbado-auth.py
 ```
+
+### Test with Docker
+
+Run the following command to build the Docker image:
+
+```sh
+docker build -t corbado-auth .
+```
+
+Run the following command to run the project:
+
+```sh
+docker run -p 5000:5000 corbado-auth
