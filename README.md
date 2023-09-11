@@ -25,3 +25,28 @@ Clone this repository to your local machine by running:
 
 ```sh
 git clone https://github.com/chigozz/flask-corbado
+
+```
+
+### Step 2: Update .env File
+
+Replace `your_project_id_here` with your project ID in the environment variable code below:
+
+```sh
+PROJECT_ID=your_project_id_here
+```
+### Step 3: Install Project Packages
+
+Run the following command to install the project packages specified in the requirements.txt file:
+
+```sh
+pip install -r requirements.txt
+```
+
+### Step 4: Run the Project
+
+Use the following command to run the project:
+
+```sh
+python corbado-auth.py
+```
