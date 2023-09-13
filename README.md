@@ -30,10 +30,21 @@ git clone https://github.com/chigozz/flask-corbado
 
 ### Step 2: Update .env File
 
-Replace `your_project_id_here` with your project ID in the environment variable code below:
+To configure the credentials, you will need to update the .env file with your API key, project ID, and JWKS URI from Corbado:
+
+* To get your API key and project ID, visit your [Corbado developer panel](https://app.corbado.com/).
+
+* For the JWKS URI, refer to the [Protecting Routes documentation](https://docs.corbado.com/sessions/protecting-routes/protecting-routes-without-sdk-support) which explains how to find the JSON Web Key Set URL.
+* 
+The JWKS URI provides the public keys needed to verify JSON web tokens. Configuring these credentials in the `.env` file will allow the application to authenticate users and validate access tokens issued by Corbado.
+
+Please refer to the [Corbado docs](https://docs.corbado.com/overview/welcome) for more details on obtaining the necessary credentials and integrating Corbado authentication in your application.
 
 ```sh
-PROJECT_ID=your_project_id_here
+ISSUER=enter_issuer_url 
+JWKS_URI=enter_jwks_uri
+API_KEY=enter_api_key  
+PROJECT_ID=enter_project_id
 ```
 ### Step 3: Install Project Packages
 
@@ -63,3 +74,4 @@ Run the following command to run the project:
 
 ```sh
 docker run -p 5000:5000 corbado-auth
+```
