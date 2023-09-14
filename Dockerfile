@@ -10,11 +10,14 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install -r requirements.txt
 
+# Copy .env file (including credentials)
+COPY .env .
+
 # Copy project code
 COPY . .
 
 # Expose port
-EXPOSE 5000 
+EXPOSE 5000
 
 # Run app
 CMD ["python", "corbado-auth.py"]
